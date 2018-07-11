@@ -20,8 +20,8 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
         const val RAIN_STRETCH = 1.5f
     }
 
-    private var prevX: Float? = null
-    private var prevY: Float? = null
+    //private var prevX: Float? = null
+    //private var prevY: Float? = null
 
     override fun getHeight(): Int = 0
 
@@ -29,8 +29,8 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
 
     override fun reset() {
         super.reset()
-        prevX = null
-        prevY = null
+        //prevX = null
+        //prevY = null
     }
 
     override fun configurePaint(paint: Paint) {
@@ -40,21 +40,28 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
     }
 
     override fun drawInternal(canvas: Canvas?, matrix: Matrix?, paint: Paint?, x: Float, y: Float, velocityX: Float, velocityY: Float, rotation: Float, velocityRotation: Float, percentageAnimated: Float) {
-        if (prevX == null || prevY == null) {
+        /*if (prevX == null || prevY == null) {
             prevX = x
             prevY = y
-        }
+        }*/
 
         when (confettoInfo.precipType) {
             PrecipType.CLEAR -> {
             }
             PrecipType.RAIN -> {
-                val dX = x - prevX!!
+                /*val dX = x - prevX!!
                 val dY = y - prevY!!
                 val x1 = prevX!! - dX * RAIN_STRETCH
                 val y1 = prevY!! - dY * RAIN_STRETCH
                 val x2 = x + dX * RAIN_STRETCH
-                val y2 = y + dY * RAIN_STRETCH
+                val y2 = y + dY * RAIN_STRETCH*/
+
+                //val dX = x - prevX!!
+                //val dY = y - prevY!!
+                val x1 = x - velocityX * RAIN_STRETCH
+                val y1 = y - velocityY * RAIN_STRETCH
+                val x2 = x + velocityX * RAIN_STRETCH
+                val y2 = y + velocityY * RAIN_STRETCH
 
                 paint!!.shader = LinearGradient(x1, y1, x2, y2,
                         intArrayOf(Color.TRANSPARENT, Color.WHITE, Color.WHITE, Color.TRANSPARENT),
@@ -73,7 +80,7 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
             }
         }
 
-        prevX = x
-        prevY = y
+        //prevX = x
+        //prevY = y
     }
 }
