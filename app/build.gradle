@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "xyz.matteobattilana.weatherview"
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 26
         versionCode 10
         versionName "2.0.4"
         vectorDrawables.useSupportLibrary = true
