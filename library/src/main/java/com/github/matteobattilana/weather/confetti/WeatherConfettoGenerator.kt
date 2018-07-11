@@ -56,8 +56,8 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
                 val x2 = x + dX * RAIN_STRETCH
                 val y2 = y + dY * RAIN_STRETCH*/
 
-                //val dX = x - prevX!!
-                //val dY = y - prevY!!
+                val velocityX = x - x!!
+                val velocityY = y - y!!
                 val x1 = x - velocityX * RAIN_STRETCH
                 val y1 = y - velocityY * RAIN_STRETCH
                 val x2 = x + velocityX * RAIN_STRETCH
