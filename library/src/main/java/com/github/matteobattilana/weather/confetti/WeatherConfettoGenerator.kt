@@ -17,11 +17,11 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
 
     companion object {
         const val SNOW_RADIUS = 7.5f
-        const val RAIN_STRETCH = 3.5f
+        const val RAIN_STRETCH = 1.5f
     }
 
-    //private var prevX: Float? = null
-    //private var prevY: Float? = null
+    private var prevX: Float? = null
+    private var prevY: Float? = null
 
     override fun getHeight(): Int = 0
 
@@ -29,8 +29,8 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
 
     override fun reset() {
         super.reset()
-        //prevX = null
-        //prevY = null
+        prevX = null
+        prevY = null
     }
 
     override fun configurePaint(paint: Paint) {
@@ -80,7 +80,7 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
             }
         }
 
-        //prevX = x
-        //prevY = y
+        prevX = x
+        prevY = y
     }
 }
