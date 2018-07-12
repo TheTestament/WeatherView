@@ -17,7 +17,7 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
 
     companion object {
         const val SNOW_RADIUS = 7.5f
-        const val RAIN_STRETCH = 20.5f
+        const val RAIN_STRETCH = 30.5f
     }
 
     private var prevX: Float? = null
