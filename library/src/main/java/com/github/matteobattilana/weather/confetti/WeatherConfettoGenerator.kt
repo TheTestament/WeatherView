@@ -17,7 +17,7 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
 
     companion object {
         const val SNOW_RADIUS = 7.5f
-        const val RAIN_STRETCH = 1.5f
+        const val RAIN_STRETCH = 20.5f
     }
 
     private var prevX: Float? = null
@@ -56,8 +56,7 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
                 val x2 = x + dX * RAIN_STRETCH
                 val y2 = y + dY * RAIN_STRETCH*/
 
-                val velocityX = x - x!!
-                val velocityY = y - y!!
+
                 val x1 = x - velocityX * RAIN_STRETCH
                 val y1 = y - velocityY * RAIN_STRETCH
                 val x2 = x + velocityX * RAIN_STRETCH
