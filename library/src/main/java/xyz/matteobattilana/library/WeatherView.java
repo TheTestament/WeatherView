@@ -153,7 +153,7 @@ public class WeatherView extends View {
         stopAnimation();
         switch (getCurrentWeather()) {
             case RAIN:
-                mParticleSystem = new ParticleSystem((ViewGroup) this.getParent(), mRainParticles * mRainTime / 1000, ContextCompat.getDrawable(mActivity, R.drawable.rain), mRainTime)
+                mParticleSystem = new ParticleSystem((ViewGroup) this.getParent(), mRainParticles * mRainTime / 1000, ContextCompat.getDrawable(mActivity, R.drawable.rain_2), mRainTime)
                         //.setAcceleration(0.00013f, 90 - mRainAngle)
                         //.setInitialRotation(-mRainAngle)
                         //.setSpeedByComponentsRange(0f, 0f, 0.05f, 0.1f)

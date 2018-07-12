@@ -24,7 +24,7 @@ class WeatherView(context: Context, attrs: AttributeSet?) : FrameLayout(context,
         lateinit var SNOW_BITMAP: Bitmap
 
         private fun initializeBitmaps(context: Context) {
-            RAIN_BITMAP = BitmapFactory.decodeResource(context.resources, R.drawable.rain)
+            RAIN_BITMAP = BitmapFactory.decodeResource(context.resources, R.drawable.rain_2)
             SNOW_BITMAP = BitmapFactory.decodeResource(context.resources, R.drawable.snow)
         }
     }
